@@ -38,7 +38,6 @@ const cities = [
 }
 
 button.active {
-  font-weight: bold;
-  background-color: #ddd;
+  border-bottom: 2px solid #f74b24;
 }
 </style>

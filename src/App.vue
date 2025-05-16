@@ -2,8 +2,11 @@
   <div class="app">
     <h1>Simple Weather</h1>
     <CityTabs :selectedCity="selectedCity" @select-city="handleCitySelect" />
-    <button @click="refreshWeather">🔄 Refresh</button>
+<!--<button @click="refreshWeather">🔄 Refresh</button>-->
     <WeatherDisplay :weatherData="weatherData" v-if="weatherData" />
+    <div class="lastUpdated" v-if="weatherData">
+      <p>Last updated on {{ new Date(weatherData.dt * 1000).toLocaleString() }}</p>
+    </div>
   </div>
 </template>
 
@@ -28,10 +31,10 @@ const handleCitySelect = (city) => {
   selectedCity.value = city
   loadWeather()
 }
-
-const refreshWeather = () => {
-  loadWeather()
-}
+// Uncomment the line below to enable the refresh button
+// const refreshWeather = () => {
+//  loadWeather()
+// }
 
 onMounted(loadWeather)
 </script>
