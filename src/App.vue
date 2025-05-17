@@ -5,7 +5,7 @@
 <!--<button @click="refreshWeather">🔄 Refresh</button>-->
     <WeatherDisplay :weatherData="weatherData" v-if="weatherData" />
     <div class="lastUpdated" v-if="weatherData">
-      <p>Last updated on {{ new Date(weatherData.dt * 1000).toLocaleString() }}</p>
+      <p>Last updated on {{ new Date(weatherData.list[0].dt * 1000).toLocaleString() }}</p>
     </div>
   </div>
 </template>

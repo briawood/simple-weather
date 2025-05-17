@@ -126,6 +126,6 @@ const uniqueDailyForecasts = computed(() => {
 }
 
 .low {
-  color: #555;
+  font-weight: bold;
 }
 </style>
